@@ -211,23 +211,23 @@
     <SubClassOf>
         <Class IRI="http://webprotege.stanford.edu/R9GnPpmVPx2iMCY6guo7Ur1"/>
         <DataSomeValuesFrom>
-            <DataProperty IRI="#OWLDataProperty_64712ae9_959f_471c_87bd_c8b5e7454347"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="http://webprotege.stanford.edu/R9GnPpmVPx2iMCY6guo7Ur1"/>
-        <DataSomeValuesFrom>
             <DataProperty IRI="#OWLDataProperty_d360d3d8_9521_4d70_b41b_5e11fcdc4257"/>
             <Datatype abbreviatedIRI="xsd:string"/>
         </DataSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="http://webprotege.stanford.edu/R9aahQeoZoxZkCpOECVVq0L"/>
-        <DataSomeValuesFrom>
+        <Class IRI="http://webprotege.stanford.edu/R9GnPpmVPx2iMCY6guo7Ur1"/>
+        <DataExactCardinality cardinality="1">
             <DataProperty IRI="#OWLDataProperty_64712ae9_959f_471c_87bd_c8b5e7454347"/>
             <Datatype abbreviatedIRI="xsd:string"/>
-        </DataSomeValuesFrom>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://webprotege.stanford.edu/R9aahQeoZoxZkCpOECVVq0L"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#OWLDataProperty_64712ae9_959f_471c_87bd_c8b5e7454347"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://webprotege.stanford.edu/RCZvbzDA1tXWNGGLUVBbLUU"/>
@@ -238,10 +238,10 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://webprotege.stanford.edu/RCZvbzDA1tXWNGGLUVBbLUU"/>
-        <DataSomeValuesFrom>
+        <DataExactCardinality cardinality="1">
             <DataProperty IRI="#OWLDataProperty_64712ae9_959f_471c_87bd_c8b5e7454347"/>
             <Datatype abbreviatedIRI="xsd:string"/>
-        </DataSomeValuesFrom>
+        </DataExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://webprotege.stanford.edu/RDC3Iixj7l76tvi5h8MAXJe"/>
@@ -260,16 +260,16 @@
     <SubClassOf>
         <Class IRI="http://webprotege.stanford.edu/RDC3Iixj7l76tvi5h8MAXJe"/>
         <DataSomeValuesFrom>
-            <DataProperty IRI="#OWLDataProperty_64712ae9_959f_471c_87bd_c8b5e7454347"/>
+            <DataProperty IRI="#OWLDataProperty_cdac1111_e84e_4b1b_9996_0a15eb7d5c3f"/>
             <Datatype abbreviatedIRI="xsd:string"/>
         </DataSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://webprotege.stanford.edu/RDC3Iixj7l76tvi5h8MAXJe"/>
-        <DataSomeValuesFrom>
-            <DataProperty IRI="#OWLDataProperty_cdac1111_e84e_4b1b_9996_0a15eb7d5c3f"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#OWLDataProperty_64712ae9_959f_471c_87bd_c8b5e7454347"/>
             <Datatype abbreviatedIRI="xsd:string"/>
-        </DataSomeValuesFrom>
+        </DataExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://webprotege.stanford.edu/RDz8qwIzkOxuyfyoytMb4le"/>
@@ -287,10 +287,10 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://webprotege.stanford.edu/RDz8qwIzkOxuyfyoytMb4le"/>
-        <DataSomeValuesFrom>
+        <DataExactCardinality cardinality="1">
             <DataProperty IRI="#OWLDataProperty_64712ae9_959f_471c_87bd_c8b5e7454347"/>
             <Datatype abbreviatedIRI="xsd:string"/>
-        </DataSomeValuesFrom>
+        </DataExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://webprotege.stanford.edu/RmBJ9prLMnF6q9WJqIvEEh"/>
@@ -316,23 +316,16 @@
     <SubClassOf>
         <Class IRI="http://webprotege.stanford.edu/RmjSh7FFmssyihnaQK9XLz"/>
         <DataSomeValuesFrom>
-            <DataProperty IRI="#OWLDataProperty_64712ae9_959f_471c_87bd_c8b5e7454347"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="http://webprotege.stanford.edu/RmjSh7FFmssyihnaQK9XLz"/>
-        <DataSomeValuesFrom>
             <DataProperty IRI="#OWLDataProperty_d360d3d8_9521_4d70_b41b_5e11fcdc4257"/>
             <Datatype abbreviatedIRI="xsd:string"/>
         </DataSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#OWLClass_0eb4538e_ea03_4f09_94f5_a739df713f06"/>
-        <DataSomeValuesFrom>
+        <Class IRI="http://webprotege.stanford.edu/RmjSh7FFmssyihnaQK9XLz"/>
+        <DataExactCardinality cardinality="1">
             <DataProperty IRI="#OWLDataProperty_64712ae9_959f_471c_87bd_c8b5e7454347"/>
             <Datatype abbreviatedIRI="xsd:string"/>
-        </DataSomeValuesFrom>
+        </DataExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#OWLClass_0eb4538e_ea03_4f09_94f5_a739df713f06"/>
@@ -340,6 +333,13 @@
             <DataProperty IRI="#hasParameters"/>
             <Datatype abbreviatedIRI="xsd:string"/>
         </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OWLClass_0eb4538e_ea03_4f09_94f5_a739df713f06"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#OWLDataProperty_64712ae9_959f_471c_87bd_c8b5e7454347"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#OWLClass_13bb7f88_2263_4a4a_a726_0da48087cf7e"/>
@@ -372,16 +372,16 @@
     <SubClassOf>
         <Class IRI="#OWLClass_8440dc7a_1a13_479b_b286_de0b156974ae"/>
         <DataSomeValuesFrom>
-            <DataProperty IRI="#OWLDataProperty_64712ae9_959f_471c_87bd_c8b5e7454347"/>
+            <DataProperty IRI="#hasParameters"/>
             <Datatype abbreviatedIRI="xsd:string"/>
         </DataSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#OWLClass_8440dc7a_1a13_479b_b286_de0b156974ae"/>
-        <DataSomeValuesFrom>
-            <DataProperty IRI="#hasParameters"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#OWLDataProperty_64712ae9_959f_471c_87bd_c8b5e7454347"/>
             <Datatype abbreviatedIRI="xsd:string"/>
-        </DataSomeValuesFrom>
+        </DataExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#OWLClass_b0eebea4_4a39_40d3_b70e_085e01e9f851"/>
