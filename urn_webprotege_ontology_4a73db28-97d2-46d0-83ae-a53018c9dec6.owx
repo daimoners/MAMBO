@@ -91,6 +91,9 @@
         <ObjectProperty IRI="#OWLObjectProperty_9fec3cf2_890a_4863_8462_39aac7052141"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasMethod"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#OWLDataProperty_4a256527_63ea_4c39_8dff_461206d216c3"/>
     </Declaration>
     <Declaration>
@@ -131,6 +134,9 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#OWLDataProperty_e1090c45_c982_477b_a0c6_b00d2678a8f9"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasParameters"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="http://webprotege.stanford.edu/R8BhhZqNnGiLNUZSYrgUHaq"/>
@@ -190,17 +196,17 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://webprotege.stanford.edu/R98xIN1Mp23KzRIsbJerx7"/>
-        <DataSomeValuesFrom>
-            <DataProperty IRI="#OWLDataProperty_ca31d1ab_2130_4ee2_9e96_68f5b30a8697"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataSomeValuesFrom>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasMethod"/>
+            <Class IRI="#OWLClass_0eb4538e_ea03_4f09_94f5_a739df713f06"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://webprotege.stanford.edu/R98xIN1Mp23KzRIsbJerx7"/>
-        <DataAllValuesFrom>
+        <DataExactCardinality cardinality="1">
             <DataProperty IRI="#OWLDataProperty_ca31d1ab_2130_4ee2_9e96_68f5b30a8697"/>
             <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
+        </DataExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://webprotege.stanford.edu/R9GnPpmVPx2iMCY6guo7Ur1"/>
@@ -295,17 +301,17 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://webprotege.stanford.edu/RmBJ9prLMnF6q9WJqIvEEh"/>
-        <DataSomeValuesFrom>
-            <DataProperty IRI="#OWLDataProperty_86881bb9_2e67_4737_be2b_212b44023d61"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataSomeValuesFrom>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasMethod"/>
+            <Class IRI="#OWLClass_8440dc7a_1a13_479b_b286_de0b156974ae"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://webprotege.stanford.edu/RmBJ9prLMnF6q9WJqIvEEh"/>
-        <DataAllValuesFrom>
-            <DataProperty IRI="#OWLDataProperty_ca31d1ab_2130_4ee2_9e96_68f5b30a8697"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#OWLDataProperty_86881bb9_2e67_4737_be2b_212b44023d61"/>
             <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
+        </DataExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://webprotege.stanford.edu/RmjSh7FFmssyihnaQK9XLz"/>
@@ -325,6 +331,13 @@
         <Class IRI="#OWLClass_0eb4538e_ea03_4f09_94f5_a739df713f06"/>
         <DataSomeValuesFrom>
             <DataProperty IRI="#OWLDataProperty_64712ae9_959f_471c_87bd_c8b5e7454347"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OWLClass_0eb4538e_ea03_4f09_94f5_a739df713f06"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasParameters"/>
             <Datatype abbreviatedIRI="xsd:string"/>
         </DataSomeValuesFrom>
     </SubClassOf>
@@ -364,6 +377,13 @@
         </DataSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#OWLClass_8440dc7a_1a13_479b_b286_de0b156974ae"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasParameters"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#OWLClass_b0eebea4_4a39_40d3_b70e_085e01e9f851"/>
         <Class IRI="#OWLClass_0eb4538e_ea03_4f09_94f5_a739df713f06"/>
     </SubClassOf>
@@ -394,6 +414,10 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#OWLObjectProperty_9fec3cf2_890a_4863_8462_39aac7052141"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasMethod"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <ObjectPropertyDomain>
