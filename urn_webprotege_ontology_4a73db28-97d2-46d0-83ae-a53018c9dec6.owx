@@ -58,7 +58,13 @@
         <Class IRI="#OWLClass_36157840_dd4c_4183_8fe1_15a647cb03b5"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#OWLClass_3e886d34_5425_4df1_9bff_2d0227ba49ad"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#OWLClass_4e6058f9_9bfb_4db1_9a8c_13e73395affc"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OWLClass_5065153a_741c_43b5_a2d3_b52562b20bea"/>
     </Declaration>
     <Declaration>
         <Class IRI="#OWLClass_81b39739_ed85_4cc7_a4ed_8ea447315fdc"/>
@@ -74,6 +80,12 @@
     </Declaration>
     <Declaration>
         <Class IRI="#OWLClass_c43d8117_58f6_4905_9d13_a52266b880bc"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OWLClass_ce0df883_9915_4fdb_a7f9_8b278f1246a5"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OWLClass_d9056f70_b307_4430_baf1_63f020a089ca"/>
     </Declaration>
     <Declaration>
         <Class IRI="#OWLClass_f0d3cb0c_61c9_4d49_88b6_007eefee0763"/>
@@ -349,7 +361,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#OWLClass_13bb7f88_2263_4a4a_a726_0da48087cf7e"/>
-        <Class IRI="#OWLClass_0eb4538e_ea03_4f09_94f5_a739df713f06"/>
+        <Class IRI="#OWLClass_d9056f70_b307_4430_baf1_63f020a089ca"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#OWLClass_178b083c_be52_4d1a_ba88_b79ddd49eb1d"/>
@@ -361,11 +373,15 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#OWLClass_2f1992b0_e1d6_44cf_a6ce_7a7abc040b67"/>
-        <Class IRI="#OWLClass_0eb4538e_ea03_4f09_94f5_a739df713f06"/>
+        <Class IRI="#OWLClass_ce0df883_9915_4fdb_a7f9_8b278f1246a5"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#OWLClass_36157840_dd4c_4183_8fe1_15a647cb03b5"/>
         <Class IRI="http://webprotege.stanford.edu/RDC3Iixj7l76tvi5h8MAXJe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OWLClass_3e886d34_5425_4df1_9bff_2d0227ba49ad"/>
+        <Class IRI="#OWLClass_ce0df883_9915_4fdb_a7f9_8b278f1246a5"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#OWLClass_4e6058f9_9bfb_4db1_9a8c_13e73395affc"/>
@@ -391,7 +407,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#OWLClass_b0eebea4_4a39_40d3_b70e_085e01e9f851"/>
-        <Class IRI="#OWLClass_0eb4538e_ea03_4f09_94f5_a739df713f06"/>
+        <Class IRI="#OWLClass_d9056f70_b307_4430_baf1_63f020a089ca"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#OWLClass_b278830d_b83d_4e9f_a726_20c50acd5e36"/>
@@ -535,7 +551,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#OWLClass_13bb7f88_2263_4a4a_a726_0da48087cf7e</IRI>
-        <Literal xml:lang="en">MD</Literal>
+        <Literal xml:lang="en">Molecular Dynamics</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -550,7 +566,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#OWLClass_2f1992b0_e1d6_44cf_a6ce_7a7abc040b67</IRI>
-        <Literal xml:lang="en">DFT</Literal>
+        <Literal xml:lang="en">Density Functional Theory</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -559,8 +575,18 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OWLClass_3e886d34_5425_4df1_9bff_2d0227ba49ad</IRI>
+        <Literal xml:lang="en">Molecular Mechanics</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#OWLClass_4e6058f9_9bfb_4db1_9a8c_13e73395affc</IRI>
         <Literal xml:lang="en">Electrical_method</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OWLClass_5065153a_741c_43b5_a2d3_b52562b20bea</IRI>
+        <Literal xml:lang="en">Structure Manipulation</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -575,7 +601,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#OWLClass_b0eebea4_4a39_40d3_b70e_085e01e9f851</IRI>
-        <Literal xml:lang="en">KMC</Literal>
+        <Literal xml:lang="en">Kinetic Monte Carlo</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -586,6 +612,16 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#OWLClass_c43d8117_58f6_4905_9d13_a52266b880bc</IRI>
         <Literal xml:lang="en">Mechanical</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OWLClass_ce0df883_9915_4fdb_a7f9_8b278f1246a5</IRI>
+        <Literal xml:lang="en">Interaction Potential</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OWLClass_d9056f70_b307_4430_baf1_63f020a089ca</IRI>
+        <Literal xml:lang="en">Driver</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
