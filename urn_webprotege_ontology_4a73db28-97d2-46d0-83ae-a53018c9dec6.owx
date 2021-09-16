@@ -187,6 +187,9 @@
         <DataProperty IRI="#OWLDataProperty_fd957d3e_7ecb_4d95_8d92_7da14914378a"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#unit"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#OWLNamedIndividual_0e424cc2_e0d6_42de_a40d_875862bc405b"/>
     </Declaration>
     <Declaration>
@@ -266,6 +269,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#atom8"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#electromagnetic1"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="http://webprotege.stanford.edu/R8BhhZqNnGiLNUZSYrgUHaq"/>
@@ -634,6 +640,10 @@
     <ClassAssertion>
         <Class IRI="http://webprotege.stanford.edu/RCZvbzDA1tXWNGGLUVBbLUU"/>
         <NamedIndividual IRI="#atom8"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#OWLClass_36157840_dd4c_4183_8fe1_15a647cb03b5"/>
+        <NamedIndividual IRI="#electromagnetic1"/>
     </ClassAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#OWLObjectProperty_2f1cec72_3eba_4b53_98d3_34bb91040442"/>
@@ -1034,6 +1044,16 @@
         <DataProperty IRI="#OWLDataProperty_64712ae9_959f_471c_87bd_c8b5e7454347"/>
         <NamedIndividual IRI="#atom8"/>
         <Literal>Oxygen</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#OWLDataProperty_64712ae9_959f_471c_87bd_c8b5e7454347"/>
+        <NamedIndividual IRI="#electromagnetic1"/>
+        <Literal>Electronic coupling</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#unit"/>
+        <NamedIndividual IRI="#electromagnetic1"/>
+        <Literal>meV</Literal>
     </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#OWLObjectProperty_2f1cec72_3eba_4b53_98d3_34bb91040442"/>
