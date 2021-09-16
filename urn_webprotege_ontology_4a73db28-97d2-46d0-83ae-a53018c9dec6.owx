@@ -246,6 +246,27 @@
     <Declaration>
         <NamedIndividual IRI="#OWLNamedIndividual_fe5168e3_dfef_465d_9d0a_b188d4c833e5"/>
     </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#atom1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#atom11"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#atom14"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#atom3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#atom6"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#atom7"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#atom8"/>
+    </Declaration>
     <SubClassOf>
         <Class IRI="http://webprotege.stanford.edu/R8BhhZqNnGiLNUZSYrgUHaq"/>
         <ObjectSomeValuesFrom>
@@ -586,6 +607,34 @@
         <Class IRI="#OWLClass_b278830d_b83d_4e9f_a726_20c50acd5e36"/>
         <NamedIndividual IRI="#OWLNamedIndividual_fe5168e3_dfef_465d_9d0a_b188d4c833e5"/>
     </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://webprotege.stanford.edu/RCZvbzDA1tXWNGGLUVBbLUU"/>
+        <NamedIndividual IRI="#atom1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://webprotege.stanford.edu/RCZvbzDA1tXWNGGLUVBbLUU"/>
+        <NamedIndividual IRI="#atom11"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://webprotege.stanford.edu/RCZvbzDA1tXWNGGLUVBbLUU"/>
+        <NamedIndividual IRI="#atom14"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://webprotege.stanford.edu/RCZvbzDA1tXWNGGLUVBbLUU"/>
+        <NamedIndividual IRI="#atom3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://webprotege.stanford.edu/RCZvbzDA1tXWNGGLUVBbLUU"/>
+        <NamedIndividual IRI="#atom6"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://webprotege.stanford.edu/RCZvbzDA1tXWNGGLUVBbLUU"/>
+        <NamedIndividual IRI="#atom7"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://webprotege.stanford.edu/RCZvbzDA1tXWNGGLUVBbLUU"/>
+        <NamedIndividual IRI="#atom8"/>
+    </ClassAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#OWLObjectProperty_2f1cec72_3eba_4b53_98d3_34bb91040442"/>
         <NamedIndividual IRI="#OWLNamedIndividual_0e424cc2_e0d6_42de_a40d_875862bc405b"/>
@@ -915,6 +964,76 @@
         <DataProperty IRI="#OWLDataProperty_64712ae9_959f_471c_87bd_c8b5e7454347"/>
         <NamedIndividual IRI="#OWLNamedIndividual_fe5168e3_dfef_465d_9d0a_b188d4c833e5"/>
         <Literal>27_DPBIC_molecules.pdb</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#OWLDataProperty_4a256527_63ea_4c39_8dff_461206d216c3"/>
+        <NamedIndividual IRI="#atom1"/>
+        <Literal>H</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#OWLDataProperty_64712ae9_959f_471c_87bd_c8b5e7454347"/>
+        <NamedIndividual IRI="#atom1"/>
+        <Literal>Hydrogen</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#OWLDataProperty_4a256527_63ea_4c39_8dff_461206d216c3"/>
+        <NamedIndividual IRI="#atom11"/>
+        <Literal>Na</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#OWLDataProperty_64712ae9_959f_471c_87bd_c8b5e7454347"/>
+        <NamedIndividual IRI="#atom11"/>
+        <Literal>Sodium</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#OWLDataProperty_4a256527_63ea_4c39_8dff_461206d216c3"/>
+        <NamedIndividual IRI="#atom14"/>
+        <Literal>Si</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#OWLDataProperty_64712ae9_959f_471c_87bd_c8b5e7454347"/>
+        <NamedIndividual IRI="#atom14"/>
+        <Literal>Silicon</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#OWLDataProperty_4a256527_63ea_4c39_8dff_461206d216c3"/>
+        <NamedIndividual IRI="#atom3"/>
+        <Literal>Li</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#OWLDataProperty_64712ae9_959f_471c_87bd_c8b5e7454347"/>
+        <NamedIndividual IRI="#atom3"/>
+        <Literal>Lithium</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#OWLDataProperty_4a256527_63ea_4c39_8dff_461206d216c3"/>
+        <NamedIndividual IRI="#atom6"/>
+        <Literal>C</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#OWLDataProperty_64712ae9_959f_471c_87bd_c8b5e7454347"/>
+        <NamedIndividual IRI="#atom6"/>
+        <Literal>Carbon</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#OWLDataProperty_4a256527_63ea_4c39_8dff_461206d216c3"/>
+        <NamedIndividual IRI="#atom7"/>
+        <Literal>N</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#OWLDataProperty_64712ae9_959f_471c_87bd_c8b5e7454347"/>
+        <NamedIndividual IRI="#atom7"/>
+        <Literal>Nitrogen</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#OWLDataProperty_4a256527_63ea_4c39_8dff_461206d216c3"/>
+        <NamedIndividual IRI="#atom8"/>
+        <Literal>O</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#OWLDataProperty_64712ae9_959f_471c_87bd_c8b5e7454347"/>
+        <NamedIndividual IRI="#atom8"/>
+        <Literal>Oxygen</Literal>
     </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#OWLObjectProperty_2f1cec72_3eba_4b53_98d3_34bb91040442"/>
@@ -1261,7 +1380,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#OWLNamedIndividual_3678b0bf_051a_47ac_af1a_3b72ee486e62</IRI>
-        <Literal xml:lang="en">atom1</Literal>
+        <Literal xml:lang="en">atom77</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
