@@ -118,6 +118,12 @@
         <ObjectProperty IRI="#hasMethod"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#manipulateStructure"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#needDriver"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#OWLDataProperty_039f22e8_069d_4ec6_a7d7_894a7d82f989"/>
     </Declaration>
     <Declaration>
@@ -334,6 +340,20 @@
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#hasMethod"/>
             <Class IRI="#OWLClass_0eb4538e_ea03_4f09_94f5_a739df713f06"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://webprotege.stanford.edu/R98xIN1Mp23KzRIsbJerx7"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#manipulateStructure"/>
+            <Class IRI="#OWLClass_5065153a_741c_43b5_a2d3_b52562b20bea"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://webprotege.stanford.edu/R98xIN1Mp23KzRIsbJerx7"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#needDriver"/>
+            <Class IRI="#OWLClass_d9056f70_b307_4430_baf1_63f020a089ca"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -1076,9 +1096,29 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#OWLObjectProperty_2b2233ff_13f4_4d7e_9f4a_e85780f2bd22"/>
+        <Class IRI="http://webprotege.stanford.edu/R8BhhZqNnGiLNUZSYrgUHaq"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#OWLObjectProperty_2b2233ff_13f4_4d7e_9f4a_e85780f2bd22"/>
+        <Class IRI="http://webprotege.stanford.edu/RDC3Iixj7l76tvi5h8MAXJe"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#OWLObjectProperty_6d7a6509_2475_4e50_97d8_6ce641ad6ead"/>
         <Class IRI="http://webprotege.stanford.edu/R8BhhZqNnGiLNUZSYrgUHaq"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#OWLObjectProperty_6d7a6509_2475_4e50_97d8_6ce641ad6ead"/>
+        <Class IRI="http://webprotege.stanford.edu/RDC3Iixj7l76tvi5h8MAXJe"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#OWLObjectProperty_2b2233ff_13f4_4d7e_9f4a_e85780f2bd22"/>
+        <Class IRI="http://webprotege.stanford.edu/R98xIN1Mp23KzRIsbJerx7"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#OWLObjectProperty_2b2233ff_13f4_4d7e_9f4a_e85780f2bd22"/>
+        <Class IRI="http://webprotege.stanford.edu/RmBJ9prLMnF6q9WJqIvEEh"/>
+    </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#OWLObjectProperty_6d7a6509_2475_4e50_97d8_6ce641ad6ead"/>
         <Class IRI="http://webprotege.stanford.edu/R98xIN1Mp23KzRIsbJerx7"/>
@@ -1086,6 +1126,14 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#OWLObjectProperty_6d7a6509_2475_4e50_97d8_6ce641ad6ead"/>
         <Class IRI="http://webprotege.stanford.edu/RmBJ9prLMnF6q9WJqIvEEh"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#manipulateStructure"/>
+        <Class IRI="#OWLClass_5065153a_741c_43b5_a2d3_b52562b20bea"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#needDriver"/>
+        <Class IRI="#OWLClass_d9056f70_b307_4430_baf1_63f020a089ca"/>
     </ObjectPropertyRange>
     <SubDataPropertyOf>
         <DataProperty IRI="#OWLDataProperty_2eaa2133_3c31_43c6_b656_a6f1585e69b9"/>
