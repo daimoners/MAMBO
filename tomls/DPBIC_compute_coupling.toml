@@ -1,0 +1,30 @@
+# This is a TOML file representing an instance of the concept of `Calculation` in MAMBO
+# In particular, we are instantiating the calculation of the electronic coupling for pair of DPBIC molecules
+
+title = "DPBIC_compute_coupling"
+
+description = """
+If one need to write a long and verbose description \
+or if it could be useful to report an extract of the original article...
+It can be done here!
+"""
+
+[owner] # This is the only section that is not in MAMBO. It's not "intrinsic" to molecular materials(?)
+name = "Matteo Baldoni"
+country = "Italy"
+institute = "CNR-ISMN"
+
+[specifications]
+ID = "01"
+driver = "DFT"
+method = "?"
+
+[files]
+structure_manipulation = [ "Align_molecule.sh" ]
+input = [ "DPBIC_pair_N_M_align.xyz" ]
+output = [ "DPBIC_single_molecule_computed.csv" ] 
+
+[infrastructure]
+number_of_cores = 64
+cpu_hours = 0.7
+required_memory = 32
