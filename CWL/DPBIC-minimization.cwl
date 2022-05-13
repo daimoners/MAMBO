@@ -1,4 +1,3 @@
-class: Workflow
 cwlVersion: v1.2
 class: CommandLineTool
 
