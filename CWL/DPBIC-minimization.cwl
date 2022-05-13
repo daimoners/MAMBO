@@ -4,7 +4,7 @@ class: CommandLineTool
 baseCommand: mpirun
 
 requirements:
-    EnvVarRequirements:
+    EnvVarRequirement:
         envDef:
             OMP_NUM_THREADS: 1
             ROOTNAME: DPBIC_double-mixed-cdft
