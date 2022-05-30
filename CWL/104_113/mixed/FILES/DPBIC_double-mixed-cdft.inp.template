@@ -1,0 +1,101 @@
+@SET RESTART_WFN          FALSE
+@SET WFN_FILE_1           DPBIC_double-cdft-state-1-1_0.wfn
+@SET WFN_FILE_2           DPBIC_double-cdft-state-2-1_0.wfn
+@SET PROJECT_NAME         DPBIC_double-mixed-cdft
+@SET NAME                 ${PROJECT_NAME}
+@SET WRITE_WFN            1
+@SET CHARGE               1
+@SET WRITE_CUBE           TRUE
+@SET XYZFILE              DPBIC_double_resid_LT_PAIR_align_rec.xyz
+
+@SET BECKE_ACTIVE         TRUE
+@SET BECKE_FRAGMENT       FALSE
+@SET MAX_SCF              500
+! DBPIC+ DPBIC
+@SET BECKE_TARGET_1       -1
+@SET BECKE_STR_1          0.0
+! DBPIC DPBIC+
+@SET BECKE_TARGET_2       +1
+@SET BECKE_STR_2          0
+
+@SET BECKE_GLOBAL_CUTOFF  FALSE
+@SET BECKE_CUTOFF_ELEMENT TRUE
+
+@SET BECKE_ADJUST_SIZE    TRUE
+
+@SET BECKE_ATOMIC_CHARGES FALSE
+
+@SET BECKE_CAVITY_CONFINE TRUE
+@SET BECKE_CAVITY_SHAPE   VDW
+@SET BECKE_CAVITY_PRINT   FALSE
+
+@SET BECKE_SHOULD_SKIP    TRUE
+
+@SET BECKE_IN_MEMORY      TRUE
+
+@SET USE_DLB              FALSE
+@SET COMPUTE_METRIC       FALSE
+@SET WFN_OVERLAP_METHOD   FALSE  
+
+@SET NGROUPS              2
+
+&GLOBAL
+  PROJECT ${PROJECT_NAME}
+  RUN_TYPE ENERGY
+  PRINT_LEVEL MEDIUM
+&END GLOBAL
+
+&MULTIPLE_FORCE_EVALS
+  FORCE_EVAL_ORDER 2 3
+  MULTIPLE_SUBSYS F
+&END
+&FORCE_EVAL
+  METHOD MIXED
+  &MIXED
+    MIXING_TYPE MIXED_CDFT
+    NGROUPS  ${NGROUPS}
+    &MIXED_CDFT
+      LAMBDA 1.0
+      COUPLING 1
+      @IF ( ${USE_DLB} == TRUE )
+        ! Defaults to FALSE
+        DLB TRUE
+        LOAD_SCALE 2
+        MORE_WORK 0
+        VERY_OVERLOADED 15
+      @ENDIF
+      @IF ( ${COMPUTE_METRIC} == TRUE )
+        ! Defaults to FALSE
+        METRIC TRUE
+      @ENDIF
+      @IF ( ${WFN_OVERLAP_METHOD} == TRUE )
+        ! Defaults to FALSE
+        WFN_OVERLAP TRUE
+        WFN_RESTART_FILE_NAME HeH-noconstraint-1_0.wfn
+      @ENDIF
+    &END MIXED_CDFT
+    &PRINT
+      &PROGRAM_RUN_INFO
+      &END
+    &END PRINT
+  &END MIXED
+  @include subsys.inc
+&END FORCE_EVAL
+
+&FORCE_EVAL
+  METHOD QS  
+  @SET BECKE_STR    ${BECKE_STR_1}
+  @SET BECKE_TARGET ${BECKE_TARGET_1}
+  @SET PROJECT_NAME ${NAME}-state-1
+  @SET WFN_FILE     ${WFN_FILE_1}
+  @include dft-common-params.inc
+&END FORCE_EVAL
+
+&FORCE_EVAL
+  METHOD QS  
+  @SET BECKE_STR    ${BECKE_STR_2}
+  @SET BECKE_TARGET ${BECKE_TARGET_2}
+  @SET PROJECT_NAME ${NAME}-state-2
+  @SET WFN_FILE     ${WFN_FILE_2}
+  @include dft-common-params.inc
+&END FORCE_EVAL
