@@ -21,6 +21,18 @@
     
 
 
+    <!-- http://www.semanticweb.org/fabio/ontologies/2022/4/untitled-ontology-17#hasCompInput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/fabio/ontologies/2022/4/untitled-ontology-17#hasCompInput">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/fabio/ontologies/2022/4/untitled-ontology-17#isComputedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fabio/ontologies/2022/4/untitled-ontology-17#Calculation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/fabio/ontologies/2022/4/untitled-ontology-17#Property"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/fabio/ontologies/2022/4/untitled-ontology-17#Structure"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/fabio/ontologies/2022/4/untitled-ontology-17#hasComputationalMethod -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/fabio/ontologies/2022/4/untitled-ontology-17#hasComputationalMethod">
@@ -31,24 +43,24 @@
     
 
 
+    <!-- http://www.semanticweb.org/fabio/ontologies/2022/4/untitled-ontology-17#hasExpInput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/fabio/ontologies/2022/4/untitled-ontology-17#hasExpInput">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/fabio/ontologies/2022/4/untitled-ontology-17#isMeasuredBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fabio/ontologies/2022/4/untitled-ontology-17#Measurement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/fabio/ontologies/2022/4/untitled-ontology-17#Property"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/fabio/ontologies/2022/4/untitled-ontology-17#Structure"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/fabio/ontologies/2022/4/untitled-ontology-17#hasExperimentalMethod -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/fabio/ontologies/2022/4/untitled-ontology-17#hasExperimentalMethod">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/fabio/ontologies/2022/4/untitled-ontology-17#Measurement"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/fabio/ontologies/2022/4/untitled-ontology-17#ExperimentalMethod"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/fabio/ontologies/2022/4/untitled-ontology-17#hasInput -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/fabio/ontologies/2022/4/untitled-ontology-17#hasInput">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/fabio/ontologies/2022/4/untitled-ontology-17#Calculation"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/fabio/ontologies/2022/4/untitled-ontology-17#Measurement"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/fabio/ontologies/2022/4/untitled-ontology-17#Property"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/fabio/ontologies/2022/4/untitled-ontology-17#Structure"/>
     </owl:ObjectProperty>
     
 
