@@ -5,7 +5,7 @@ script=run_cp2k.slurm
 templateinput=DPBIC_double-mixed-cdft.inp.template
 input=DPBIC_double-mixed-cdft.inp
 #for directory in `find . -maxdepth 1 -mindepth 1 -type d|  sed 's#./##'`
-for directory in 152_166 30_171 3_130
+for directory in $(cat ./batch_9)
 do
     work_dir=${directory}/mixed
     if [ ! -d $work_dir ] ; then
