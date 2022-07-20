@@ -22,53 +22,10 @@
     
 
 
-    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#has_COM_coordinates -->
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#has_computational_input -->
 
-    <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#has_COM_coordinates">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#MolecularSystem"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#CartesianCoordinates"/>
-                    <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#SphericalCoordinates"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#has_coordinates -->
-
-    <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#has_coordinates">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#StructuralEntity"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#CartesianCoordinates"/>
-                    <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#SphericalCoordinates"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#has_driver -->
-
-    <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#has_driver">
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#ComputationalMethod"/>
-        <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Driver"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#has_input -->
-
-    <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#has_input">
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Calculation"/>
+    <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#has_computational_input">
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Simulation"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -81,11 +38,54 @@
     
 
 
-    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#has_output -->
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#has_computational_output -->
 
-    <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#has_output">
+    <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#has_computational_output">
         <owl:inverseOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#is_computed_by"/>
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Calculation"/>
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Simulation"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Property"/>
+                    <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Structure"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#has_coordinates -->
+
+    <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#has_coordinates">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#StructuralEntity"/>
+        <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Coordinates"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#has_experimental_input -->
+
+    <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#has_experimental_input">
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Experiment"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Property"/>
+                    <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Structure"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#has_experimental_output -->
+
+    <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#has_experimental_output">
+        <owl:inverseOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#is_measured_by"/>
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Experiment"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -193,7 +193,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Calculation"/>
+        <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Simulation"/>
     </owl:ObjectProperty>
     
 
@@ -201,7 +201,6 @@
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#is_measured_by -->
 
     <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#is_measured_by">
-        <owl:inverseOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#produces"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -210,7 +209,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Measurement"/>
+        <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Experiment"/>
     </owl:ObjectProperty>
     
 
@@ -218,27 +217,8 @@
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#is_oriented_as -->
 
     <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#is_oriented_as">
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#MolecularSystem"/>
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#StructuralEntity"/>
         <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Orientation"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#is_paired_with_driver -->
-
-    <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#is_paired_with_driver">
-        <owl:inverseOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#is_paired_with_potential"/>
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#InteractionPotential"/>
-        <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Driver"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#is_paired_with_potential -->
-
-    <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#is_paired_with_potential">
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Driver"/>
-        <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#InteractionPotential"/>
     </owl:ObjectProperty>
     
 
@@ -290,22 +270,6 @@
     
 
 
-    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#produces -->
-
-    <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#produces">
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Measurement"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Property"/>
-                    <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Structure"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
-    </owl:ObjectProperty>
-    
-
-
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#relates_to_property -->
 
     <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#relates_to_property">
@@ -325,26 +289,10 @@
     
 
 
-    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#requires -->
-
-    <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#requires">
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Measurement"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Property"/>
-                    <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Structure"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
-    </owl:ObjectProperty>
-    
-
-
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#use_computational_method -->
 
     <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#use_computational_method">
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Calculation"/>
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Simulation"/>
         <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#ComputationalMethod"/>
     </owl:ObjectProperty>
     
@@ -353,8 +301,17 @@
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#use_experimental_method -->
 
     <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#use_experimental_method">
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Measurement"/>
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Experiment"/>
         <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#ExperimentalMethod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#uses_algorithm -->
+
+    <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#uses_algorithm">
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#ComputationalMethod"/>
+        <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Algorithm"/>
     </owl:ObjectProperty>
     
 
@@ -373,7 +330,7 @@
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#ID -->
 
     <owl:DatatypeProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#ID">
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Calculation"/>
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Simulation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -420,8 +377,8 @@
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Calculation"/>
-                    <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Measurement"/>
+                    <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Experiment"/>
+                    <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Simulation"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -497,8 +454,8 @@
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Calculation"/>
-                    <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Measurement"/>
+                    <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Experiment"/>
+                    <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Simulation"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -674,7 +631,7 @@
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#log -->
 
     <owl:DatatypeProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#log">
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Measurement"/>
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Experiment"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -819,6 +776,12 @@
     
 
 
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#Algorithm -->
+
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Algorithm"/>
+    
+
+
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#Atom -->
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Atom">
@@ -845,31 +808,10 @@
     
 
 
-    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#Calculation -->
-
-    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Calculation">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#author"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#date"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Measurement"/>
-    </owl:Class>
-    
-
-
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#CartesianCoordinates -->
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#CartesianCoordinates">
-        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Position"/>
+        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Coordinates"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#X"/>
@@ -912,6 +854,12 @@
     
 
 
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#Coordinates -->
+
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Coordinates"/>
+    
+
+
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#Crystal -->
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Crystal">
@@ -928,20 +876,6 @@
     
 
 
-    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#Driver -->
-
-    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Driver">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#is_paired_with_potential"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#InteractionPotential"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#ElectricalMethod -->
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#ElectricalMethod">
@@ -954,6 +888,27 @@
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#ElectroMagneticProperty">
         <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#Experiment -->
+
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Experiment">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#author"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#date"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Simulation"/>
     </owl:Class>
     
 
@@ -982,14 +937,14 @@
 
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#InteractionPotential -->
 
-    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#InteractionPotential">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#is_paired_with_driver"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Driver"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#InteractionPotential"/>
+    
+
+
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#InternalCoordinates -->
+
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#InternalCoordinates">
+        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Coordinates"/>
     </owl:Class>
     
 
@@ -997,7 +952,7 @@
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#KineticMonteCarloMethod -->
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#KineticMonteCarloMethod">
-        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Driver"/>
+        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Algorithm"/>
     </owl:Class>
     
 
@@ -1022,26 +977,6 @@
                 <owl:onProperty rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#iupac_name"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#Measurement -->
-
-    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Measurement">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#author"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#date"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1076,7 +1011,7 @@
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#MolecularDynamicsMethod -->
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#MolecularDynamicsMethod">
-        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Driver"/>
+        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Algorithm"/>
     </owl:Class>
     
 
@@ -1117,7 +1052,7 @@
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#Optimizer -->
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Optimizer">
-        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Driver"/>
+        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Algorithm"/>
     </owl:Class>
     
 
@@ -1141,12 +1076,6 @@
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#StructuralUnit"/>
     </owl:Class>
-    
-
-
-    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#Position -->
-
-    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Position"/>
     
 
 
@@ -1286,10 +1215,30 @@
     
 
 
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#Simulation -->
+
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Simulation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#author"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#date"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#SphericalCoordinates -->
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#SphericalCoordinates">
-        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Position"/>
+        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Coordinates"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#azimuthal_angle"/>
@@ -1566,8 +1515,8 @@
 
     <owl:NamedIndividual rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#water1_computational_method">
         <rdf:type rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#ComputationalMethod"/>
-        <mambo:has_driver rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#water1_md_driver"/>
         <mambo:has_potential rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#water1_ff_potential"/>
+        <mambo:uses_algorithm rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#water1_md_driver"/>
     </owl:NamedIndividual>
     
 
@@ -1586,9 +1535,9 @@
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#water1_density_calculation -->
 
     <owl:NamedIndividual rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#water1_density_calculation">
-        <rdf:type rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Calculation"/>
-        <mambo:has_input rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#water_molecule1"/>
-        <mambo:has_input rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#water_molecule2"/>
+        <rdf:type rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Simulation"/>
+        <mambo:has_computational_input rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#water_molecule1"/>
+        <mambo:has_computational_input rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#water_molecule2"/>
         <mambo:use_computational_method rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#water1_computational_method"/>
         <mambo:author rdf:datatype="http://www.w3.org/2001/XMLSchema#string">John Doe</mambo:author>
         <mambo:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1111-11-11T11:11:11</mambo:date>
@@ -1600,7 +1549,6 @@
 
     <owl:NamedIndividual rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#water1_ff_potential">
         <rdf:type rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#ForceField"/>
-        <mambo:is_paired_with_driver rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#water1_md_driver"/>
     </owl:NamedIndividual>
     
 
