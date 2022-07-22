@@ -22,6 +22,24 @@
     
 
 
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#has_angle_vector -->
+
+    <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#has_angle_vector">
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#LatticeParameters"/>
+        <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#CartesianCoordinates"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#has_axis_vector -->
+
+    <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#has_axis_vector">
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#LatticeParameters"/>
+        <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#EulerAngles"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#has_computational_input -->
 
     <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#has_computational_input">
@@ -94,6 +112,15 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#has_lattice_parameters -->
+
+    <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#has_lattice_parameters">
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Structure"/>
+        <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#LatticeParameters"/>
     </owl:ObjectProperty>
     
 
@@ -362,6 +389,15 @@
     
 
 
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#alpha -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#alpha">
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#EulerAngles"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#atomic_number -->
 
     <owl:DatatypeProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#atomic_number">
@@ -391,6 +427,15 @@
 
     <owl:DatatypeProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#azimuthal_angle">
         <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#SphericalCoordinates"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#beta -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#beta">
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#EulerAngles"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
@@ -572,6 +617,15 @@
     
 
 
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#gamma -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#gamma">
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#EulerAngles"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#i -->
 
     <owl:DatatypeProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#i">
@@ -615,15 +669,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Quaternion"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#lattice -->
-
-    <owl:DatatypeProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#lattice">
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Crystal"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -892,6 +937,35 @@
     
 
 
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#EulerAngles -->
+
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#EulerAngles">
+        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Orientation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#alpha"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#beta"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#gamma"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#Experiment -->
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Experiment">
@@ -953,6 +1027,27 @@
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#KineticMonteCarloMethod">
         <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#LatticeParameters -->
+
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#LatticeParameters">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#has_angle_vector"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#EulerAngles"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#has_axis_vector"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#CartesianCoordinates"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
