@@ -6,8 +6,26 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:mambo="file:/home/fabio/Projects/MAMBO/mambo.owl#">
+     xmlns:mambo="file:/home/fabio/Projects/MAMBO/mambo.owl#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#id -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#id"/>
     
 
 
@@ -141,12 +159,18 @@
     
 
 
-    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#has_bonded_potential -->
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#has_component -->
 
-    <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#has_bonded_potential">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#InteractionPotential"/>
-        <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#BondedPotential"/>
+    <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#has_component">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#BondedPotential"/>
+                    <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#NonBondedPotential"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#PotentialComponents"/>
     </owl:ObjectProperty>
     
 
@@ -154,7 +178,7 @@
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#has_computational_input -->
 
     <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#has_computational_input">
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Calculation"/>
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Simulation"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -172,7 +196,7 @@
     <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#has_computational_output">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#is_computed_by"/>
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Calculation"/>
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Simulation"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -219,11 +243,19 @@
     
 
 
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#has_ensemble -->
+
+    <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#has_ensemble">
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#MolecularDynamics"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#has_experimental_input -->
 
     <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#has_experimental_input">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Measurement"/>
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Experiment"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -241,7 +273,7 @@
     <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#has_experimental_output">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#is_measured_by"/>
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Measurement"/>
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Experiment"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -254,20 +286,10 @@
     
 
 
-    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#has_four_body -->
-
-    <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#has_four_body">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#BondedPotential"/>
-        <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#FourBody"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#has_integrated_atom -->
 
     <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#has_integrated_atom">
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#ThermodynamicalEntities"/>
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#ExternalCoupling"/>
         <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Atom"/>
     </owl:ObjectProperty>
     
@@ -276,7 +298,7 @@
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#has_integrator -->
 
     <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#has_integrator">
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Algorithm"/>
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#MolecularDynamics"/>
         <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Integrator"/>
     </owl:ObjectProperty>
     
@@ -288,16 +310,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#ComputationalMethod"/>
         <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#InteractionPotential"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#has_pair_potential -->
-
-    <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#has_pair_potential">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#InteractionPotential"/>
-        <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#NonBondedPotential"/>
     </owl:ObjectProperty>
     
 
@@ -316,8 +328,6 @@
     <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#has_structural_entity">
         <owl:inverseOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#is_structural_entity_of"/>
         <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Structure"/>
-        <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Algorithm"/>
-        <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#InteractionPotential"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -325,15 +335,8 @@
                     <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#MolecularAggregate"/>
                     <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#MolecularSystem"/>
                     <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Particle"/>
+                    <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#StructuralEntity"/>
                     <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#StructuralUnit"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#CartesianCoordinates"/>
-                    <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#SphericalCoordinates"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
@@ -383,35 +386,8 @@
 
     <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#has_thermostat">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#ComputationalMethod"/>
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Algorithm"/>
         <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Thermostat"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#has_three_body -->
-
-    <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#has_three_body">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#BondedPotential"/>
-        <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#ThreeBody"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#has_two_body -->
-
-    <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#has_two_body">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#BondedPotential"/>
-                    <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#NonBondedPotential"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#TwoBody"/>
     </owl:ObjectProperty>
     
 
@@ -427,7 +403,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Calculation"/>
+        <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Simulation"/>
     </owl:ObjectProperty>
     
 
@@ -443,7 +419,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Measurement"/>
+        <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Experiment"/>
     </owl:ObjectProperty>
     
 
@@ -486,6 +462,7 @@
                     <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#MolecularAggregate"/>
                     <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#MolecularSystem"/>
                     <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Particle"/>
+                    <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#StructuralEntity"/>
                     <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#StructuralUnit"/>
                 </owl:unionOf>
             </owl:Class>
@@ -542,7 +519,7 @@
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#use_computational_method -->
 
     <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#use_computational_method">
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Calculation"/>
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Simulation"/>
         <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#ComputationalMethod"/>
     </owl:ObjectProperty>
     
@@ -551,7 +528,7 @@
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#use_experimental_method -->
 
     <owl:ObjectProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#use_experimental_method">
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Measurement"/>
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Experiment"/>
         <rdfs:range rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#ExperimentalMethod"/>
     </owl:ObjectProperty>
     
@@ -571,7 +548,7 @@
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#ID -->
 
     <owl:DatatypeProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#ID">
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Calculation"/>
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Simulation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -952,7 +929,7 @@
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#log -->
 
     <owl:DatatypeProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#log">
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Measurement"/>
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Experiment"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -972,6 +949,15 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Algorithm"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#number_of_atoms -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#number_of_atoms">
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#MolecularSystem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:DatatypeProperty>
     
 
@@ -1121,7 +1107,7 @@
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#time_constant -->
 
     <owl:DatatypeProperty rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#time_constant">
-        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#ThermodynamicalEntities"/>
+        <rdfs:domain rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#ExternalCoupling"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
@@ -1169,7 +1155,9 @@
 
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#Algorithm -->
 
-    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Algorithm"/>
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Algorithm">
+        <rdfs:comment>The algorithm used in a computational method</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -1177,6 +1165,7 @@
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Angle">
         <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#TopologicalEntities"/>
+        <rdfs:comment>The angle between two atoms</rdfs:comment>
     </owl:Class>
     
 
@@ -1184,6 +1173,7 @@
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#Atom -->
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Atom">
+        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#StructuralEntity"/>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -1205,6 +1195,7 @@
         <owl:disjointWith rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Particle"/>
         <owl:disjointWith rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#StructuralUnit"/>
         <owl:disjointWith rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Structure"/>
+        <rdfs:comment>An elementary constituent of matter, made of a nucleus and electrons</rdfs:comment>
     </owl:Class>
     
 
@@ -1212,8 +1203,9 @@
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#Barostat -->
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Barostat">
-        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#ThermodynamicalEntities"/>
+        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#ExternalCoupling"/>
         <owl:disjointWith rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Thermostat"/>
+        <rdfs:comment>A method for coupling the particles in a molecular dynamics simulation to an external barostat for controlling pressure</rdfs:comment>
     </owl:Class>
     
 
@@ -1231,20 +1223,17 @@
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#BondedPotential">
         <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#MolecularMechanics"/>
         <owl:disjointWith rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#NonBondedPotential"/>
+        <rdfs:comment>The bonded terms of an interaction potential in simulations</rdfs:comment>
     </owl:Class>
-    
-
-
-    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#Calculation -->
-
-    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Calculation"/>
     
 
 
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#CartesianCoordinates -->
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#CartesianCoordinates">
+        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Coordinates"/>
         <owl:disjointWith rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#SphericalCoordinates"/>
+        <rdfs:comment>The cartesian coordinates of an object in 3D space with respect to a reference system</rdfs:comment>
     </owl:Class>
     
 
@@ -1253,19 +1242,33 @@
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#ChemicalProperty">
         <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Property"/>
+        <rdfs:comment>A chemical property of a material</rdfs:comment>
     </owl:Class>
     
 
 
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#ComputationalMethod -->
 
-    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#ComputationalMethod"/>
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#ComputationalMethod">
+        <rdfs:comment>A specific computational method for simulating the properties or the behavior of a material or materials</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#Coordinates -->
+
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Coordinates">
+        <rdfs:comment>The spatial coordinates of a structural entity</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#Crystal -->
 
-    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Crystal"/>
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Crystal">
+        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Structure"/>
+        <rdfs:comment>A material structure with periodicity in space in one, two or three dimensions</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -1273,6 +1276,7 @@
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#DFT">
         <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#QuantumMechanics"/>
+        <rdfs:comment>A computational method for evaluating interaction  potentials based on density functional theory</rdfs:comment>
     </owl:Class>
     
 
@@ -1289,6 +1293,7 @@
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#ElectricalMethod">
         <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#ExperimentalMethod"/>
+        <rdfs:comment>An electrical experimental method or procedure</rdfs:comment>
     </owl:Class>
     
 
@@ -1297,13 +1302,32 @@
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#ElectroMagneticProperty">
         <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Property"/>
+        <rdfs:comment>An electromagnetic property of a material</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#Experiment -->
+
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Experiment">
+        <rdfs:comment>An experimental operation/procedure or a set of experimental operations/procedures for determining or measuring the properties or the behavior of a material or materials</rdfs:comment>
     </owl:Class>
     
 
 
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#ExperimentalMethod -->
 
-    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#ExperimentalMethod"/>
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#ExperimentalMethod">
+        <rdfs:comment>A specific experimental method for determining or measuring the properties or the behavior of a material or materials</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#ExternalCoupling -->
+
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#ExternalCoupling">
+        <rdfs:comment>A method used to couple particles in a molecular dynamics simulation to an external reference systems</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -1311,6 +1335,7 @@
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#FourBody">
         <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#PotentialComponents"/>
+        <rdfs:comment>A 4-body interaction potential term</rdfs:comment>
     </owl:Class>
     
 
@@ -1319,37 +1344,40 @@
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#HarteeFock">
         <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#QuantumMechanics"/>
+        <rdfs:comment>A computational method for evaluating interaction potentials based on the Hartree-Fock theory</rdfs:comment>
     </owl:Class>
     
 
 
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#Integrator -->
 
-    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Integrator"/>
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Integrator">
+        <rdfs:comment>The integrator of the equation of motions in molecular dynamics simulations</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#InteractionPotential -->
 
-    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#InteractionPotential"/>
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#InteractionPotential">
+        <rdfs:comment>The interaction potential used in a specific computational method</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#LatticeParameters -->
 
-    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#LatticeParameters"/>
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#LatticeParameters">
+        <rdfs:comment>The parameters of a lattice in a periodic structure</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#Material -->
 
-    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Material"/>
-    
-
-
-    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#Measurement -->
-
-    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Measurement"/>
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Material">
+        <rdfs:comment>A portion of physical matter</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -1357,6 +1385,7 @@
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#MechanicalProperty">
         <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Property"/>
+        <rdfs:comment>A mechanical property of a material</rdfs:comment>
     </owl:Class>
     
 
@@ -1364,6 +1393,7 @@
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#MolecularAggregate -->
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#MolecularAggregate">
+        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Structure"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#has_subunit"/>
@@ -1373,7 +1403,7 @@
         <owl:disjointWith rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#MolecularSystem"/>
         <owl:disjointWith rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Particle"/>
         <owl:disjointWith rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#StructuralUnit"/>
-        <owl:disjointWith rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Structure"/>
+        <rdfs:comment>A material composed of aggregates of molecules of the same kind or of different kind</rdfs:comment>
     </owl:Class>
     
 
@@ -1382,6 +1412,7 @@
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#MolecularDynamics">
         <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Algorithm"/>
+        <rdfs:comment>A computational tool or algorithm for molecular dynamics simulation</rdfs:comment>
     </owl:Class>
     
 
@@ -1390,6 +1421,7 @@
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#MolecularMechanics">
         <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#InteractionPotential"/>
+        <rdfs:comment>A potential based on molecular mechanics</rdfs:comment>
     </owl:Class>
     
 
@@ -1397,9 +1429,38 @@
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#MolecularSystem -->
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#MolecularSystem">
+        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#StructuralEntity"/>
         <owl:disjointWith rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Particle"/>
         <owl:disjointWith rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#StructuralUnit"/>
         <owl:disjointWith rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Structure"/>
+        <rdfs:comment>A chemically well-defined system made up of atoms kept together by chemical bonds</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#NPT -->
+
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#NPT">
+        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#SimulationEnsembles"/>
+        <rdfs:comment>The constant-pressure constant-temperature (isothermal-isobaric) simulation ensemble in molecular dynamics</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#NVE -->
+
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#NVE">
+        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#SimulationEnsembles"/>
+        <rdfs:comment>The constant-energy (microcanonical) simulation ensemble in molecular dynamics</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#NVT -->
+
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#NVT">
+        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#SimulationEnsembles"/>
+        <rdfs:comment>The constant-temperature (canonical) simulation ensemble in molecular dynamics</rdfs:comment>
     </owl:Class>
     
 
@@ -1408,6 +1469,7 @@
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#NonBondedPotential">
         <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#MolecularMechanics"/>
+        <rdfs:comment>The non bonded terms of an interaction potential in simulations</rdfs:comment>
     </owl:Class>
     
 
@@ -1416,6 +1478,7 @@
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#OpticalMethod">
         <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#ExperimentalMethod"/>
+        <rdfs:comment>An optical experimental method or procedure</rdfs:comment>
     </owl:Class>
     
 
@@ -1424,28 +1487,35 @@
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Optimizer">
         <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Algorithm"/>
+        <rdfs:comment>A computational tool or algorithm for structural optimization</rdfs:comment>
     </owl:Class>
     
 
 
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#Orientation -->
 
-    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Orientation"/>
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Orientation">
+        <rdfs:comment>The orientation of a system in 3D space with respect to a reference orientation</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#Particle -->
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Particle">
+        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#StructuralEntity"/>
         <owl:disjointWith rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#StructuralUnit"/>
         <owl:disjointWith rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Structure"/>
+        <rdfs:comment>A pseudo-particle used in simulations</rdfs:comment>
     </owl:Class>
     
 
 
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#PotentialComponents -->
 
-    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#PotentialComponents"/>
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#PotentialComponents">
+        <rdfs:comment>The components of an interaction potentials</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -1466,6 +1536,7 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment>A chemico-physical property of a material or materials</rdfs:comment>
     </owl:Class>
     
 
@@ -1474,6 +1545,7 @@
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#QuantumMechanics">
         <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#InteractionPotential"/>
+        <rdfs:comment>A potential based on quantum mechanics</rdfs:comment>
     </owl:Class>
     
 
@@ -1483,6 +1555,7 @@
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Quaternion">
         <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Orientation"/>
         <owl:disjointWith rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#RotationMatrix"/>
+        <rdfs:comment>The quaternion coordinate vector of a system in 3D space with respect to a reference orientation</rdfs:comment>
     </owl:Class>
     
 
@@ -1491,27 +1564,68 @@
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#RotationMatrix">
         <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Orientation"/>
+        <rdfs:comment>The matrix representing the rotation of a system in 3D space with respect to a reference orientation</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#Simulation -->
+
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Simulation">
+        <rdfs:comment>A computational operation/procedure or a set of computational operations/procedures for simulating the properties or the behavior of a material or materials</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#SimulationEnsembles -->
+
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#SimulationEnsembles">
+        <rdfs:comment>The thermodynamic ensemble in which a molecular dynamics simulation is performed</rdfs:comment>
     </owl:Class>
     
 
 
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#SphericalCoordinates -->
 
-    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#SphericalCoordinates"/>
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#SphericalCoordinates">
+        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Coordinates"/>
+        <rdfs:comment>The spherical coordinates of an object in 3D space with respect to a reference system</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#StructuralEntity -->
+
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#StructuralEntity">
+        <rdfs:comment>A structural unit in which a structure can be decomposed into</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#StructuralUnit -->
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#StructuralUnit">
+        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#StructuralEntity"/>
         <owl:disjointWith rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Structure"/>
+        <rdfs:comment>A chemically well-defined structural unit, for example a functional group, constituting</rdfs:comment>
     </owl:Class>
     
 
 
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#Structure -->
 
-    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Structure"/>
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Structure">
+        <rdfs:comment>The structure of a material or materials</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#StructureManipulation -->
+
+    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#StructureManipulation">
+        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Algorithm"/>
+        <rdfs:comment>An algorithm or tool for the manipulation of a structure</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -1519,20 +1633,16 @@
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#TOF">
         <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#ElectricalMethod"/>
+        <rdfs:comment>A time-of-flight experimental method</rdfs:comment>
     </owl:Class>
-    
-
-
-    <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#ThermodynamicalEntities -->
-
-    <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#ThermodynamicalEntities"/>
     
 
 
     <!-- file:/home/fabio/Projects/MAMBO/mambo.owl#Thermostat -->
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#Thermostat">
-        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#ThermodynamicalEntities"/>
+        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#ExternalCoupling"/>
+        <rdfs:comment>A method for coupling the particles in a molecular dynamics simulation to an external thermostat for controlling temperature</rdfs:comment>
     </owl:Class>
     
 
@@ -1541,6 +1651,7 @@
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#ThreeBody">
         <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#PotentialComponents"/>
+        <rdfs:comment>A 3-body interaction potential term</rdfs:comment>
     </owl:Class>
     
 
@@ -1555,6 +1666,37 @@
 
     <owl:Class rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#TwoBody">
         <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#PotentialComponents"/>
+        <rdfs:comment>A 2-body interaction potential term</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000002 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000002">
+        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Experiment"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BFO:0000002</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">continuant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000015 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000015">
+        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Experiment"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BFO:0000015</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000140 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000140">
+        <rdfs:subClassOf rdf:resource="file:/home/fabio/Projects/MAMBO/mambo.owl#Experiment"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BFO:0000140</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">continuant fiat boundary</rdfs:label>
     </owl:Class>
     
 
@@ -1814,6 +1956,14 @@
             <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#FourBody"/>
             <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#ThreeBody"/>
             <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#TwoBody"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#NPT"/>
+            <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#NVE"/>
+            <rdf:Description rdf:about="file:/home/fabio/Projects/MAMBO/mambo.owl#NVT"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
