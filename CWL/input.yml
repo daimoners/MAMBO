@@ -1,4 +1,0 @@
-filesA: cp2k.popt
-filesB: DPBIC_double-mixed-cdft.inp
-
-simulation_output: DPBIC_double-mixed-cdft.out
