@@ -85,38 +85,12 @@
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#characterizes">
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Experiment"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#MolecularMaterialProperty"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Property"/>
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Structure"/>
         <rdfs:comment>Links an experimental investigation to the specific structural or material property features it examines.</rdfs:comment>
         <rdfs:label>characterizes</rdfs:label>
         <rdfs:seeAlso>https://doi.org/10.1351/goldbook.C01020</rdfs:seeAlso>
         <skos:definition>Associates an experimental procedure with the molecular-level characteristics (structural arrangements or measurable properties) it is designed to investigate or quantify.</skos:definition>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#describes_molecular_material_property -->
-
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#describes_molecular_material_property">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Result"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#MolecularMaterialProperty"/>
-        <rdfs:comment>Associates a computational or experimental result with the material property it quantifies.</rdfs:comment>
-        <rdfs:label>describes_molecular_material_property</rdfs:label>
-        <rdfs:seeAlso>https://doi.org/10.1351/goldbook.P04891</rdfs:seeAlso>
-        <skos:definition>Links output data from simulations or measurements to the specific molecular material characteristic (e.g., conductivity, thermal stability) that the data represents.</skos:definition>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#describes_structure -->
-
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#describes_structure">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Result"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Structure"/>
-        <rdfs:comment>Connects result data to the molecular or crystalline structure it characterizes.</rdfs:comment>
-        <rdfs:label>describes_structure</rdfs:label>
-        <rdfs:seeAlso>https://doi.org/10.1351/goldbook.S06060</rdfs:seeAlso>
-        <skos:definition>Associates output from structural determination methods (e.g., diffraction, microscopy) with the atomic/molecular arrangement they describe, including spatial coordinates and connectivity.</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -257,7 +231,7 @@
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#has_computational_input">
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Simulation"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#MolecularMaterialProperty"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Property"/>
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Structure"/>
         <rdfs:comment>Associates simulations with their required structural or property data inputs.</rdfs:comment>
         <rdfs:label>has_computational_input</rdfs:label>
@@ -272,7 +246,7 @@
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#has_computational_output">
         <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#is_computed_by"/>
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Simulation"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#MolecularMaterialProperty"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Property"/>
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Structure"/>
         <rdfs:comment>Links simulations to their generated structural or property data results.</rdfs:comment>
         <rdfs:label>has_computational_output</rdfs:label>
@@ -323,7 +297,7 @@
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#has_experimental_input">
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Experiment"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#MolecularMaterialProperty"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Property"/>
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Structure"/>
         <rdfs:comment>Links experiments to their required starting materials or reference data.</rdfs:comment>
         <rdfs:label>has_experimental_input</rdfs:label>
@@ -338,7 +312,7 @@
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#has_experimental_output">
         <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#is_measured_by"/>
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Experiment"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#MolecularMaterialProperty"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Property"/>
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Structure"/>
         <rdfs:comment>Associates experiments with their measured structural or property results.</rdfs:comment>
         <rdfs:label>has_experimental_output</rdfs:label>
@@ -405,7 +379,7 @@
     <!-- https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#has_measurement_condition -->
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#has_measurement_condition">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#MolecularMaterialProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Property"/>
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#MeasurementCondition"/>
         <rdfs:comment>Associates material properties with their experimental context.</rdfs:comment>
         <rdfs:label>has_measurement_condition</rdfs:label>
@@ -457,26 +431,12 @@
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#has_property">
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#MolecularMaterial"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#MolecularMaterialProperty"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Property"/>
         <rdfs:comment>Associates a molecular material with its measurable characteristics.</rdfs:comment>
         <rdfs:comment>Associates materials with their measurable characteristics.</rdfs:comment>
         <rdfs:label>has_property</rdfs:label>
         <rdfs:seeAlso>https://doi.org/10.1351/goldbook.P04891</rdfs:seeAlso>
         <skos:definition>Connects a molecular material to its quantifiable physical or chemical attributes (thermal, mechanical, optical, etc.) that emerge from molecular structure and organization.</skos:definition>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#has_result -->
-
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#has_result">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Experiment"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Simulation"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Result"/>
-        <rdfs:comment>Links experiments or simulations to their generated data outputs.</rdfs:comment>
-        <rdfs:label>has_result</rdfs:label>
-        <rdfs:seeAlso>http://purl.obolibrary.org/obo/IAO_0000109</rdfs:seeAlso>
-        <skos:definition>Associates an investigative method (experimental or computational) with the structured data objects containing its quantitative findings about molecular structures or material properties.</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -633,7 +593,7 @@
     <!-- https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#is_computed_by -->
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#is_computed_by">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#MolecularMaterialProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Property"/>
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Structure"/>
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Simulation"/>
         <rdfs:comment>Links structural/property data to generating simulations.</rdfs:comment>
@@ -662,7 +622,7 @@
     <!-- https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#is_measured_by -->
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#is_measured_by">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#MolecularMaterialProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Property"/>
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Structure"/>
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Experiment"/>
         <rdfs:comment>Associates structural/property data with experimental methods.</rdfs:comment>
@@ -785,7 +745,7 @@
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#predicts">
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Simulation"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#MolecularMaterialProperty"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Property"/>
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Structure"/>
         <rdfs:comment>Links simulations to their forecasted material characteristics.</rdfs:comment>
         <rdfs:label>predicts</rdfs:label>
@@ -1370,7 +1330,7 @@
     <!-- https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#property_value -->
 
     <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#property_value">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#MolecularMaterialProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Property"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:label>property_value</rdfs:label>
     </owl:DatatypeProperty>
@@ -1477,7 +1437,7 @@
     <!-- https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#unit -->
 
     <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#unit">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#MolecularMaterialProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Property"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label>unit</rdfs:label>
     </owl:DatatypeProperty>
@@ -1583,6 +1543,19 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#BandGap -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#BandGap">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#ElectricalProperty"/>
+        <rdfs:comment>Band gap is an intrinsic electronic property of a material that represents the energy difference between the valence band and the conduction band. It plays a crucial role in determining a material&apos;s electrical conductivity and is a key factor in classifying materials as conductors, semiconductors, or insulators.</rdfs:comment>
+        <rdfs:label>BandGap</rdfs:label>
+        <rdfs:seeAlso>https://en.wikipedia.org/wiki/Band_gap</rdfs:seeAlso>
+        <rdfs:seeAlso>https://www.sciencedirect.com/topics/chemistry/band-gap</rdfs:seeAlso>
+        <skos:definition>The band gap is the energy difference between the highest occupied electronic state (valence band) and the lowest unoccupied electronic state (conduction band) in a solid material. It determines the electrical conductivity of the material and is typically measured in electronvolts (eV).</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#BarostatCoupling -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#BarostatCoupling">
@@ -1601,8 +1574,8 @@
     <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#BarostatParameters">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#SimulationParameters"/>
         <rdfs:comment>Parameters regulating pressure control in molecular simulations.</rdfs:comment>
-        <rdfs:seeAlso>https://doi.org/10.1063/1.448118</rdfs:seeAlso>
         <rdfs:seeAlso>https://docs.lammps.org/Howto_barostat.html</rdfs:seeAlso>
+        <rdfs:seeAlso>https://doi.org/10.1063/1.448118</rdfs:seeAlso>
         <skos:definition>Variables defining pressure coupling algorithms (e.g., Berendsen, Parrinello-Rahman), including target pressure, compressibility, time constants, and anisotropic scaling options, which maintain or modulate system pressure during simulations.</skos:definition>
     </owl:Class>
     
@@ -1739,7 +1712,6 @@
     <!-- https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#ComputationalResult -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#ComputationalResult">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Result"/>
         <rdfs:label>ComputationalResult</rdfs:label>
         <rdfs:seeAlso>https://link.springer.com/chapter/10.1007/978-3-642-33472-6_8</rdfs:seeAlso>
         <skos:definition>A result obtained from computational simulations, numerical methods, or theoretical calculations.</skos:definition>
@@ -1888,7 +1860,7 @@
     <!-- https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#ElectricalProperty -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#ElectricalProperty">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#MolecularMaterialProperty"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Property"/>
         <rdfs:comment>Charge transport and storage characteristics.</rdfs:comment>
         <rdfs:label>ElectricalProperty</rdfs:label>
         <rdfs:seeAlso>https://link.springer.com/referenceworkentry/10.1007/978-3-540-30300-8_9</rdfs:seeAlso>
@@ -1925,7 +1897,6 @@
     <!-- https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#ExperimentalResult -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#ExperimentalResult">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Result"/>
         <rdfs:comment>Experimental results are derived from laboratory procedures, spectroscopy, diffraction methods, or other empirical techniques used to study molecular and material properties.</rdfs:comment>
         <rdfs:label>ExperimentalResult</rdfs:label>
         <rdfs:seeAlso>https://goldbook.iupac.org/terms/view/M03796</rdfs:seeAlso>
@@ -2100,7 +2071,7 @@
     <!-- https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#MechanicalProperty -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#MechanicalProperty">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#MolecularMaterialProperty"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Property"/>
         <rdfs:comment>Responses to mechanical stress/strain.</rdfs:comment>
         <rdfs:label>MechanicalProperty</rdfs:label>
         <rdfs:seeAlso>https://www.nde-ed.org/Physics/Materials/Mechanical/Mechanical.xhtml</rdfs:seeAlso>
@@ -2186,20 +2157,6 @@
         <rdfs:seeAlso>https://link.springer.com/book/10.1007/978-3-7091-6276-7</rdfs:seeAlso>
         <rdfs:seeAlso>https://onlinelibrary.wiley.com/doi/book/10.1002/9780470686058</rdfs:seeAlso>
         <skos:definition>Materials whose behavior arises from molecular-scale interactions, including organic, inorganic, and composite systems.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#MolecularMaterialProperty -->
-
-    <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#MolecularMaterialProperty">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:comment>A measurable characteristic arising from molecular-scale structure and interactions.</rdfs:comment>
-        <rdfs:label>MolecularMaterialProperty</rdfs:label>
-        <rdfs:seeAlso>https://en.wikipedia.org/wiki/List_of_materials_properties</rdfs:seeAlso>
-        <rdfs:seeAlso>https://simple.wikipedia.org/wiki/Material_property</rdfs:seeAlso>
-        <rdfs:seeAlso>https://www.sciencedirect.com/topics/materials-science/materials-property</rdfs:seeAlso>
-        <skos:definition>A quantifiable attribute of molecular materials that emerges from their atomic/molecular composition, bonding, and organization, which may be intrinsic (e.g., bandgap) or conditioned by measurement protocols (e.g., tensile strength at 300K).</skos:definition>
     </owl:Class>
     
 
@@ -2325,7 +2282,7 @@
     <!-- https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#OpticalProperty -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#OpticalProperty">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#MolecularMaterialProperty"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Property"/>
         <rdfs:comment>Light-matter interaction characteristics.</rdfs:comment>
         <rdfs:label>OpticalProperty</rdfs:label>
         <rdfs:seeAlso>https://en.wikipedia.org/wiki/Optical_properties</rdfs:seeAlso>
@@ -2454,6 +2411,20 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Property -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Property">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment>A measurable characteristic arising from molecular-scale structure and interactions.</rdfs:comment>
+        <rdfs:label>Property</rdfs:label>
+        <rdfs:seeAlso>https://en.wikipedia.org/wiki/List_of_materials_properties</rdfs:seeAlso>
+        <rdfs:seeAlso>https://simple.wikipedia.org/wiki/Material_property</rdfs:seeAlso>
+        <rdfs:seeAlso>https://www.sciencedirect.com/topics/materials-science/materials-property</rdfs:seeAlso>
+        <skos:definition>A quantifiable attribute of molecular materials that emerges from their atomic/molecular composition, bonding, and organization, which may be intrinsic (e.g., bandgap) or conditioned by measurement protocols (e.g., tensile strength at 300K).</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#QuantumSimulation -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#QuantumSimulation">
@@ -2488,18 +2459,6 @@
         <rdfs:seeAlso>https://en.wikipedia.org/wiki/Refractive_index</rdfs:seeAlso>
         <rdfs:seeAlso>https://refractiveindex.info/</rdfs:seeAlso>
         <skos:definition>A dimensionless quantity (n) describing phase velocity reduction of light in a medium, critical for photonic applications.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Result -->
-
-    <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Result">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:comment>Results represent quantitative or qualitative data collected through empirical or computational methods, used to analyze molecular and material properties.</rdfs:comment>
-        <rdfs:label>Result</rdfs:label>
-        <rdfs:seeAlso>https://goldbook.iupac.org/terms/view/R05351</rdfs:seeAlso>
-        <skos:definition>A recorded outcome obtained from an experiment, simulation, or theoretical calculation.</skos:definition>
     </owl:Class>
     
 
@@ -2716,7 +2675,7 @@
     <!-- https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#ThermalProperty -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#ThermalProperty">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#MolecularMaterialProperty"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/daimoners/MAMBO/master/mambo.owl#Property"/>
         <rdfs:comment>Responses to temperature changes or heat flow.</rdfs:comment>
         <rdfs:label>ThermalProperty</rdfs:label>
         <rdfs:seeAlso>https://link.springer.com/chapter/10.1007/978-3-642-16641-9_8</rdfs:seeAlso>
