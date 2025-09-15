@@ -367,6 +367,87 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">use_experimental_method</rdfs:label>
 </owl:ObjectProperty>
 
+<owl:ObjectProperty rdf:about="#has_composition">
+  <rdfs:domain rdf:resource="#Material"/>
+  <rdfs:range rdf:resource="#Composition"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_composition</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_symmetry">
+  <rdfs:domain rdf:resource="#Structure"/>
+  <rdfs:range rdf:resource="#Symmetry"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_symmetry</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_measurement_condition">
+  <rdfs:domain rdf:resource="#MaterialProperty"/>
+  <rdfs:range rdf:resource="#MeasurementCondition"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_measurement_condition</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_aggregation_type">
+  <rdfs:domain rdf:resource="#MolecularAggregate"/>
+  <rdfs:range rdf:resource="#AggregationType"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_aggregation_type</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_simulation_parameters">
+  <rdfs:domain rdf:resource="#Simulation"/>
+  <rdfs:range rdf:resource="#SimulationParameters"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_simulation_parameters</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_experimental_setup">
+  <rdfs:domain rdf:resource="#Experiment"/>
+  <rdfs:range rdf:resource="#ExperimentalSetup"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_experimental_setup</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#characterizes">
+  <rdfs:domain rdf:resource="#Experiment"/>
+  <rdfs:range rdf:resource="#Structure"/>
+  <rdfs:range rdf:resource="#MaterialProperty"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">characterizes</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#predicts">
+  <rdfs:domain rdf:resource="#Simulation"/>
+  <rdfs:range rdf:resource="#Structure"/>
+  <rdfs:range rdf:resource="#MaterialProperty"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">predicts</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#validates">
+  <rdfs:domain rdf:resource="#Experiment"/>
+  <rdfs:range rdf:resource="#Simulation"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">validates</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_topology">
+  <rdfs:domain rdf:resource="#MolecularSystem"/>
+  <rdfs:range rdf:resource="#TopologicalEntities"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_topology</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasResult">
+  <rdfs:domain rdf:resource="#Experiment"/>
+  <rdfs:domain rdf:resource="#Simulation"/>
+  <rdfs:range rdf:resource="#Result"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasResult</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#describesStructure">
+  <rdfs:domain rdf:resource="#Result"/>
+  <rdfs:range rdf:resource="#Structure"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describesStructure</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#describesMaterialProperty">
+  <rdfs:domain rdf:resource="#Result"/>
+  <rdfs:range rdf:resource="#MaterialProperty"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describesMaterialProperty</rdfs:label>
+</owl:ObjectProperty>
+
 <owl:DatatypeProperty rdf:about="#atomic_number">
   <rdfs:domain rdf:resource="#Atom"/>
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
@@ -697,9 +778,34 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">value</rdfs:label>
 </owl:DatatypeProperty>
 
+<owl:DatatypeProperty rdf:about="#has_accuracy_level">
+  <rdfs:domain rdf:resource="#ComputationalMethod"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_accuracy_level</rdfs:label>
+</owl:DatatypeProperty>
+
+<!-- Existing classes -->
+<!-- ... (keep all existing classes) ... -->
+
+<!-- Updated and new classes -->
 <owl:Class rdf:about="#Material">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Material</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#OrganicMaterial">
+  <rdfs:subClassOf rdf:resource="#Material"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OrganicMaterial</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#InorganicMaterial">
+  <rdfs:subClassOf rdf:resource="#Material"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">InorganicMaterial</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#CompositeMaterial">
+  <rdfs:subClassOf rdf:resource="#Material"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CompositeMaterial</rdfs:label>
 </owl:Class>
 
 <owl:Class rdf:about="#Structure">
@@ -707,39 +813,14 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Structure</rdfs:label>
 </owl:Class>
 
-<owl:Class rdf:about="#Crystal">
+<owl:Class rdf:about="#Amorphous">
   <rdfs:subClassOf rdf:resource="#Structure"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Crystal</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Amorphous</rdfs:label>
 </owl:Class>
 
-<owl:Class rdf:about="#MolecularAggregate">
+<owl:Class rdf:about="#Polycrystalline">
   <rdfs:subClassOf rdf:resource="#Structure"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MolecularAggregate</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#StructuralEntity">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StructuralEntity</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#Atom">
-  <rdfs:subClassOf rdf:resource="#StructuralEntity"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Atom</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#MolecularSystem">
-  <rdfs:subClassOf rdf:resource="#StructuralEntity"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MolecularSystem</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#Particle">
-  <rdfs:subClassOf rdf:resource="#StructuralEntity"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Particle</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#FunctionalGroup">
-  <rdfs:subClassOf rdf:resource="#StructuralEntity"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FunctionalGroup</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Polycrystalline</rdfs:label>
 </owl:Class>
 
 <owl:Class rdf:about="#MaterialProperty">
@@ -747,19 +828,34 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialProperty</rdfs:label>
 </owl:Class>
 
-<owl:Class rdf:about="#ChemicalProperty">
+<owl:Class rdf:about="#OpticalProperty">
   <rdfs:subClassOf rdf:resource="#MaterialProperty"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ChemicalProperty</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OpticalProperty</rdfs:label>
 </owl:Class>
 
-<owl:Class rdf:about="#ElectroMagneticProperty">
+<owl:Class rdf:about="#ThermalProperty">
   <rdfs:subClassOf rdf:resource="#MaterialProperty"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ElectroMagneticProperty</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ThermalProperty</rdfs:label>
 </owl:Class>
 
-<owl:Class rdf:about="#MechanicalProperty">
-  <rdfs:subClassOf rdf:resource="#MaterialProperty"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MechanicalProperty</rdfs:label>
+<owl:Class rdf:about="#MolecularAggregate">
+  <rdfs:subClassOf rdf:resource="#Structure"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MolecularAggregate</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Polymer">
+  <rdfs:subClassOf rdf:resource="#MolecularAggregate"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Polymer</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Supramolecular">
+  <rdfs:subClassOf rdf:resource="#MolecularAggregate"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Supramolecular</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Nanoparticle">
+  <rdfs:subClassOf rdf:resource="#MolecularAggregate"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nanoparticle</rdfs:label>
 </owl:Class>
 
 <owl:Class rdf:about="#Simulation">
@@ -767,69 +863,19 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Simulation</rdfs:label>
 </owl:Class>
 
-<owl:Class rdf:about="#ComputationalMethod">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ComputationalMethod</rdfs:label>
+<owl:Class rdf:about="#QuantumSimulation">
+  <rdfs:subClassOf rdf:resource="#Simulation"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">QuantumSimulation</rdfs:label>
 </owl:Class>
 
-<owl:Class rdf:about="#Algorithm">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Algorithm</rdfs:label>
+<owl:Class rdf:about="#MolecularSimulation">
+  <rdfs:subClassOf rdf:resource="#Simulation"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MolecularSimulation</rdfs:label>
 </owl:Class>
 
-<owl:Class rdf:about="#MolecularDynamics">
-  <rdfs:subClassOf rdf:resource="#Algorithm"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MolecularDynamics</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#Optimizer">
-  <rdfs:subClassOf rdf:resource="#Algorithm"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Optimizer</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#StructureManipulation">
-  <rdfs:subClassOf rdf:resource="#Algorithm"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StructureManipulation</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#SimulationEnsemble">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SimulationEnsemble</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#NPT">
-  <rdfs:subClassOf rdf:resource="#SimulationEnsemble"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NPT</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#NVT">
-  <rdfs:subClassOf rdf:resource="#SimulationEnsemble"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NVT</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#NVE">
-  <rdfs:subClassOf rdf:resource="#SimulationEnsemble"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NVE</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#ExternalCoupling">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ExternalCoupling</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#Barostat">
-  <rdfs:subClassOf rdf:resource="#ExternalCoupling"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Barostat</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#Thermostat">
-  <rdfs:subClassOf rdf:resource="#ExternalCoupling"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thermostat</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#Integrator">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Integrator</rdfs:label>
+<owl:Class rdf:about="#ContinuumSimulation">
+  <rdfs:subClassOf rdf:resource="#Simulation"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ContinuumSimulation</rdfs:label>
 </owl:Class>
 
 <owl:Class rdf:about="#Experiment">
@@ -837,69 +883,79 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Experiment</rdfs:label>
 </owl:Class>
 
-<owl:Class rdf:about="#Continuant">
+<owl:Class rdf:about="#SpectroscopicExperiment">
   <rdfs:subClassOf rdf:resource="#Experiment"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Continuant</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SpectroscopicExperiment</rdfs:label>
 </owl:Class>
 
-<owl:Class rdf:about="#ContinuantFiatBoundary">
+<owl:Class rdf:about="#DiffractionExperiment">
   <rdfs:subClassOf rdf:resource="#Experiment"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ContinuantFiatBoundary</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DiffractionExperiment</rdfs:label>
 </owl:Class>
 
-<owl:Class rdf:about="#Process">
+<owl:Class rdf:about="#MicroscopyExperiment">
   <rdfs:subClassOf rdf:resource="#Experiment"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Process</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MicroscopyExperiment</rdfs:label>
 </owl:Class>
 
-<owl:Class rdf:about="#ExperimentalMethod">
+<owl:Class rdf:about="#Composition">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ExperimentalMethod</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Composition</rdfs:label>
 </owl:Class>
 
-<owl:Class rdf:about="#ElectricalMethod">
-  <rdfs:subClassOf rdf:resource="#ExperimentalMethod"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ElectricalMethod</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#TOF">
-  <rdfs:subClassOf rdf:resource="#ElectricalMethod"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TOF</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#OpticalMethod">
-  <rdfs:subClassOf rdf:resource="#ExperimentalMethod"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OpticalMethod</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#Coordinates">
+<owl:Class rdf:about="#Symmetry">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Coordinates</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Symmetry</rdfs:label>
 </owl:Class>
 
-<owl:Class rdf:about="#CartesianCoordinates">
-  <rdfs:subClassOf rdf:resource="#Coordinates"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CartesianCoordinates</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#SphericalCoordinates">
-  <rdfs:subClassOf rdf:resource="#Coordinates"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SphericalCoordinates</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#Orientation">
+<owl:Class rdf:about="#MeasurementCondition">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Orientation</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MeasurementCondition</rdfs:label>
 </owl:Class>
 
-<owl:Class rdf:about="#Quaternion">
-  <rdfs:subClassOf rdf:resource="#Orientation"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quaternion</rdfs:label>
+<owl:Class rdf:about="#SimulationParameters">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SimulationParameters</rdfs:label>
 </owl:Class>
 
-<owl:Class rdf:about="#RotationMatrix">
-  <rdfs:subClassOf rdf:resource="#Orientation"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RotationMatrix</rdfs:label>
+<owl:Class rdf:about="#ExperimentalSetup">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ExperimentalSetup</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#AggregationType">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AggregationType</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Molecule">
+  <rdfs:subClassOf rdf:resource="#MolecularSystem"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Molecule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Cluster">
+  <rdfs:subClassOf rdf:resource="#MolecularSystem"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cluster</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#ComputationalMethod">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ComputationalMethod</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#MolecularDynamics">
+  <rdfs:subClassOf rdf:resource="#ComputationalMethod"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MolecularDynamics</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#DensityFunctionalTheory">
+  <rdfs:subClassOf rdf:resource="#ComputationalMethod"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DensityFunctionalTheory</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#MonteCarlo">
+  <rdfs:subClassOf rdf:resource="#ComputationalMethod"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MonteCarlo</rdfs:label>
 </owl:Class>
 
 <owl:Class rdf:about="#TopologicalEntities">
@@ -907,80 +963,34 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TopologicalEntities</rdfs:label>
 </owl:Class>
 
+<owl:Class rdf:about="#Atom">
+  <rdfs:subClassOf rdf:resource="#TopologicalEntities"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Atom</rdfs:label>
+</owl:Class>
+
 <owl:Class rdf:about="#Bond">
   <rdfs:subClassOf rdf:resource="#TopologicalEntities"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bond</rdfs:label>
 </owl:Class>
 
-<owl:Class rdf:about="#Angle">
+<owl:Class rdf:about="#FunctionalGroup">
   <rdfs:subClassOf rdf:resource="#TopologicalEntities"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Angle</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FunctionalGroup</rdfs:label>
 </owl:Class>
 
-<owl:Class rdf:about="#Dihedral">
-  <rdfs:subClassOf rdf:resource="#TopologicalEntities"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dihedral</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#LatticeParameter">
+<owl:Class rdf:about="#Result">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LatticeParameter</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Result</rdfs:label>
 </owl:Class>
 
-<owl:Class rdf:about="#InteractionPotential">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">InteractionPotential</rdfs:label>
+<owl:Class rdf:about="#ExperimentalResult">
+  <rdfs:subClassOf rdf:resource="#Result"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ExperimentalResult</rdfs:label>
 </owl:Class>
 
-<owl:Class rdf:about="#MolecularMechanics">
-  <rdfs:subClassOf rdf:resource="#InteractionPotential"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MolecularMechanics</rdfs:label>
+<owl:Class rdf:about="#SimulationResult">
+  <rdfs:subClassOf rdf:resource="#Result"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SimulationResult</rdfs:label>
 </owl:Class>
-
-<owl:Class rdf:about="#BondedPotential">
-  <rdfs:subClassOf rdf:resource="#MolecularMechanics"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BondedPotential</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#NonBondedPotential">
-  <rdfs:subClassOf rdf:resource="#MolecularMechanics"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NonBondedPotential</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#QuantumMechanics">
-  <rdfs:subClassOf rdf:resource="#InteractionPotential"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">QuantumMechanics</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#DFT">
-  <rdfs:subClassOf rdf:resource="#QuantumMechanics"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DFT</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#HartreeFock">
-  <rdfs:subClassOf rdf:resource="#QuantumMechanics"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HartreeFock</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#PotentialComponent">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PotentialComponent</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#FourBody">
-  <rdfs:subClassOf rdf:resource="#PotentialComponent"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FourBody</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#ThreeBody">
-  <rdfs:subClassOf rdf:resource="#PotentialComponent"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ThreeBody</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#TwoBody">
-  <rdfs:subClassOf rdf:resource="#PotentialComponent"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TwoBody</rdfs:label>
-</owl:Class>
-
 
 </rdf:RDF>
